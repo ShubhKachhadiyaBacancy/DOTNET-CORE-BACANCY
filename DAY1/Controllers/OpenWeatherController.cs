@@ -4,7 +4,6 @@ namespace DAY1.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-
     //OpenWeather controller
     public class OpenWeatherController:ControllerBase
     {
