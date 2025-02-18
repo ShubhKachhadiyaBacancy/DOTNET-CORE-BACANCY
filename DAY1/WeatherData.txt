@@ -1,0 +1,14 @@
+{
+  "Date": "2025-02-18",
+  "TemperatureC": 10,
+  "TemperatureF": 49,
+  "Summary": "Freeze"
+}
+
+{
+  "Date": "2025-02-18",
+  "TemperatureC": 20,
+  "TemperatureF": 67,
+  "Summary": "Cold"
+}
+
