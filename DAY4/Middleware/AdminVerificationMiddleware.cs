@@ -24,13 +24,14 @@ namespace DAY4.Middleware
                 string? password = httpContext.Request.Query["password"];
                 if (password == null)
                 {
+                    httpContext.Response.StatusCode = 400;
                     await httpContext.Response.WriteAsync("PASSWORD IS NULL");
                     Console.WriteLine("PASSWORD IS NULL");
                     return;
                 }
                 else if (password != configuration.GetSection("Admin:Password").Value)
                 {
-                    //httpContext.Response.StatusCode = 400;
+                    httpContext.Response.StatusCode = 400;
                     await httpContext.Response.WriteAsync("PASSWORD NOT VERIFIED");
                     Console.WriteLine("PASSWORD NOT VERIFIED");
                     return;
