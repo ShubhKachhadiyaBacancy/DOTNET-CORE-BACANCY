@@ -45,8 +45,8 @@ namespace DAY5.Controllers
                 new Claim("AdminId", id),
                 new Claim("AdminUsername", username),
                 new Claim("AdminPassword", password),
-                new Claim("Role", "Admin"),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(ClaimTypes.Role, "Admin"),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 
             var token = new JwtSecurityToken(

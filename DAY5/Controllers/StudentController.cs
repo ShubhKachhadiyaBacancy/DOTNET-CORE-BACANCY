@@ -15,6 +15,7 @@ namespace DAY5.Controllers
             this.studentManagement = studentManagement;
         }
 
+        [AllowAnonymous]
         [HttpGet("GetStudents")]
         public IActionResult GetStudentsController()
         {
@@ -26,6 +27,7 @@ namespace DAY5.Controllers
             return Ok(studentList);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddStudent")]
         public IActionResult AddStudentsController([FromBody] Student student)
         {
@@ -37,6 +39,7 @@ namespace DAY5.Controllers
             return BadRequest(msg);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("RemoveStudent")]
         public IActionResult RemoveStudentsController([FromBody] Student student)
         {
@@ -48,6 +51,7 @@ namespace DAY5.Controllers
             return BadRequest(msg);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateStudent")]
         public IActionResult UpdateStudentsController([FromBody] Student student)
         {
